@@ -1,0 +1,6 @@
+Enter some trans transactions in <ISBN> <# sales> <price> format: (ctrl-d (unix) or ctrl-z (win) to quit.)
+1234 20 136 6.8
+1111 5 35 7
+0234 89 266 2.98876
+7777 21 21 1
+2225 3 24 8
