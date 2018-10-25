@@ -1,0 +1,5 @@
+Exercise 3.33: What would happen if we did not initialize the scores array
+in the program on page 116?
+    - The program would have undefined results as we could not guarantee that
+      scores would have 10 0 elements. So many of the values would be wrong
+      as we would be using junk data.

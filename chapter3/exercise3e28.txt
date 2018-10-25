@@ -1,0 +1,10 @@
+Exercise 3.29: List some of the drawbacks of using an array
+instead of a vector.
+    - The size of an array must be known at compile time.
+        - Technically, many compilers implement variable length
+          arrays, but programs that use them are not necessarily portable.
+    - Size arrays degrade into pointers in many cases size information
+      can be lost. This contributes to buffer overflows which are the 
+      most common type of security hole when using C++.
+    - Arrays are not easily resizeable like vectors.
+    - They are, arguably, less intuitive to use than vectors.
