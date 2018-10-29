@@ -1,0 +1,41 @@
+Exercise 4.17: Explain the difference between prefix and postfix increment.
+    - Prefix increment increments the variable and returns the updated value.
+      Postfix increment returns the original value of the variable and then
+      updates its value.
+
+Exercise 4.18: What would happen if the while loop on page 148 that
+               prints the elements from a vector used the prefix increment
+               operator?
+Reference: 
+auto pbeg = v.begin();
+while (pbeg != v.end() && *beg >= 0)
+    cout << *pbeg++ << endl; // print the current value and advance pbeg.
+
+If we used *++pbeg the loop would increment pbeg and then dereference
+the iterator. This would cause unintende and potentially disastrous 
+results by skipping the first element every time and dereferencing 
+a pointer to an address past the end of the vector, causing a security issue.
+
+Exercise 4.19: Given that ptr points to an int, that vec is a vector<int>,
+and that ival is an int, explain the behavior of each of these expressions.
+Which, if any, are likely to be incorrect? Why? How might each be corrected?
+
+(a) ptr != 0 && *ptr++
+Correct. This statement checks if the ptr is null, and if it is not
+it then checks if the value of the ptr is not zero,
+incrementing the pointer afterwards. It returns true if the pointer is not
+null and the value pointed to by it is non-zero. It increments the pointer
+if it is not null.
+
+(b) ival++ && ival
+Correct. This statement checks if the value of ival is non-zero, increments it,
+and if it was not zero checks if the new value is non-zero as well.
+
+(c) vec[ival++] <= vec[ival]
+Incorrect. Unlike && and ||, <= makes no gaurantee about the order of evaluation
+of its two operands. Thus the statement is undefined.
+It can be corrected like so:
+
+vec[ival] <= vec[ival + 1]
+++ival;
+

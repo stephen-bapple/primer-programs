@@ -1,0 +1,15 @@
+Exercise 4.08: Explain when operands are evaluated in the logical AND,
+               logical OR, and equality operators.
+    - The left operand is always evaluated first for the AND and OR operators,
+      and the right operand will only be evaluated if the left operand was 
+      true for AND or false for OR. For the equality operator,
+      order of evaluation is undefined and left up to the compiler.
+
+Exercise 4.09: Explain the behavior of the condition in the following if:
+    - const char *cp = "Hello World";
+    - if (cp && *cp)
+
+    - This if statement first checks if cp is the null pointer (as it has the
+      value 0) and if cp is not the null ptr it checks if cp points to the null
+      character (as '\0' has value 0). It evaluates to true iff cp is not the 
+      null pointer and the character it points at is not the null character.

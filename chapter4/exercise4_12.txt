@@ -1,0 +1,13 @@
+Exercise 4.12: Assuming i, j, and k are all ints, explain what i != j < k means.
+    - < has a higher precedence than !=, so j < k is evaluated first returning
+      true or false. Because i is an int, the true|false is casted to int
+      becoming 1|0 and then it is tested if i is equal to 1|0 depending on
+      whether j was less than k.
+      So the expression returns true if j < k and i == 1, or if j >= k
+      and i == 0.
+      The programmer should have been clearer about their intent as the meaning
+      of this code is obtuse and may not mean anything at all. If it is correct
+      the programmer should have written: 
+          if (i == 1 && j < k || i == 0 && j >= k)
+      as it avoids comparing a bool to an int and is more clear about what is
+      being tested.
