@@ -1,0 +1,20 @@
+Exercise 5.1:
+
+What is the null statement? 
+- The null statement is a semicolon without any statement preceding it. It does nothing.
+
+When might you use a null statement?
+- When a language feature requires a statement but one is unnecessary to the logic of
+  the program.
+
+
+Exercise 5.2:
+
+What is a block? 
+- A block is a pair of curly braces that enclose 0 or more statements, declarations,
+or inner blocks. It acts as a single statement to the program-logic outside of the block.
+
+When might you use a block?
+- When the logic of your program requires you to use multiple statements but a
+language feature requires you to use a single statement.
+
