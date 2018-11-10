@@ -1,0 +1,10 @@
+Exercise 5.8:
+What is a "dangling else"? 
+- A dangling else is an else that is associated with an inner if statement
+  despite the programmer likely intending it to be paired with an outer
+  if statement.
+
+How are else clauses resolved in C++?
+- else clauses are always paired with the immediately preceding if statement.
+  This can be overriden by placing the nearest if inside the block of a
+  preceding if making the else pair with that if instead.
