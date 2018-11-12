@@ -1,0 +1,48 @@
+Exercise 5.15
+Explain each of the following loops. Correct any problems you detect:
+
+(a)
+for (int ix = 0; ix != sz; ++ix) { /* ... */ }
+if (ix != sz)
+    // ...
+
+This loop walks an index through a sequence of values that range from
+0 through sz - 1. Then the if statement checks if ix is not equal to
+sz, i.e. if the loop exited because of a break rather than the condition
+evaluating to false.
+There is a problem with the if statement in that it tries to use
+the value of ix despite it being local to the for loop. It can be
+fixed by moving the declaration of ix to before the for loop:
+
+int ix;
+for (ix = 0; ix != sz; ++ix) { /* ... */ }
+if (ix != sz)
+    // ...
+
+
+(b):
+int ix;
+for (ix != sz; ++ix) { /* ... */ }
+
+This for loop attemps to do the same thing as the previous one,
+walk ix, an index presumably, through a sequence of values ending
+with sz - 1. It is not compilable because the for loop does not
+contain an intializer statement and even if there was a null
+statement ix is never initialized so the behavior is undefined.
+It can be fixed by adding in initializer:
+
+int ix;
+for (ix = 0; ix != sz; ++ix) { /* ... */ }
+
+(c):
+for (int ix = 0; ix != sz; ++ix, ++sz) { /* ... */ }
+
+If sz is zero, this loop never executes. If sz is not zero then the behavior is
+undefined since sz will never equal ix since both are incremented at the end of
+the loop and will eventually cause overflow which is technically undefined but
+will likely result in an infinite loop.
+It is hard to tell what the intention of this loop is, but if an infinite loop
+was intended there is a portable way to ensure it executes indefinitely 
+regardless of how integer overflow is implemented:
+
+for (;;) { / * ... */}
