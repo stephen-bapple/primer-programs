@@ -1,0 +1,6 @@
+Exercise 6.1: What is the difference between a parameter and an argument?
+
+A parameter is a named variable of a functon. An argument is a value
+supplied by the caller of the function that is used to initialize the
+corresponding parameter.
+

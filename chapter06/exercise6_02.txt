@@ -1,0 +1,48 @@
+Exercise 6.2: Indicate which of the following functions are in error and why.
+Suggest how you might correct the problems:
+
+(a):
+int f() {
+    string s;
+    // ...
+    return s;
+}
+
+This function is in error because the return type (int) does not match with
+the returned value s (string). To fix it the return type should be changed
+to string:
+
+string f() {
+    //...
+}
+
+
+(b):
+f2(int i) { /* ... */}
+
+This function is in error because it is missing a return type.
+A return type should be added preceeding the function name, we'll use void
+since the code snippet doesn't hint at any return value:
+
+void f2(int i) { /* ... */ }
+
+
+(c):
+int calc(int v1, int v1) /* ... */ }
+
+This function is in error because it is missing an opening curly brace and the
+second parameter has the same name as the first. To fix it the opening brace
+should be added and the second parameter changed to a different name:
+
+int calc(int v1, int v2) { /* ... */ }
+
+
+(d):
+double square(double x) return x * x;
+
+This function is in error because it is missing its curly braces.
+Despite if/else while and for not strictly requiring block statements,
+functions do. It can be fixed by adding the braces:
+double square(double x) { return x * x; }
+
+
