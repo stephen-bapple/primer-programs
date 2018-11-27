@@ -1,0 +1,34 @@
+Exercise 6.6: Explain the differences between a parameter, a local variable,
+and a local static variable. Give an example of a function in which each
+might be useful.
+
+A local variable is a variable that belongs to a function. It is created when 
+execution of the function passes through its declaration and is destroyed when
+the function returns. It is not accessible outside the function.
+A parameter is the same as a local variable except it is created at the start
+of the function and initialized using the corresponding argument passed to the
+function.
+A local static variable is the same as a local variable in that it is created
+when execution first reaches its declaration and it is not accessible outside
+the function, but unlike a local variable it is only destroyed when the program
+exits and it retains its value between calls of the function.
+
+An example of a function that uses all three of these would be one that
+calculates a factorial. The local variable would be used to hold the 
+accumulating value for the factorial that is returned, the parameter would 
+be used to get the value to factorialize from the caller, and the static
+variable could be used to count how many total multiplications are done in
+a program that calculates a lot of factorials.
+e.g.:
+
+int fact(int parameter) // Parameter - number to factorialize.
+{
+    static int static_variable = 0; // Static - counts multiplications.
+    int local_variable = 1;         // Local - holds accumulating factorial.
+    
+    while (parameter > 1)
+    {
+        ++static_variable;
+        local_variable *= parameter--;
+    }
+}
